@@ -1,3 +1,4 @@
+// dummy data
 const jobs =[
   {
     "id": 1,
@@ -82,21 +83,34 @@ const jobs =[
 ]
 
 
+/*
+1. select the searchfilter 
+2. select the salaryFilter
+3. slect the location filter
+4. select the container where we schould show the text if after applying the filter data not found
+5. select the container where we show all the job card
+*/
 const searchFilter = document.getElementById('title');
 const salaryFilter = document.getElementById('range');
 const locationFilter = document.getElementById('location');
 const NojobContainer = document.getElementById('noResults');
 const jobcontainer = document.getElementById('jobs');
 
+/*
 
+this function show the filter data as well as the intial load data in this we pass the list of the data it only show the card nothing else
+*/
 function displayJobs(jobData){
     jobcontainer.innerHTML = "";
+    // if the jobdata list is null it means no job found show so we show the not result found and return
     if(jobData.length==0){
         noResults.textContent = 'No results found';
         return;
     }
 
     noResults.textContent = "";
+
+    // we loop over the full data and  build the card
 
     jobData.forEach(job=>{
         const card = document.createElement('div');
@@ -117,6 +131,14 @@ function displayJobs(jobData){
 }
 
 
+// apply the filter
+/*
+get all the value 
+how the filter works:
+if location you entered not found then return null or the minsalery you entered is not found and the title you eneterd not found event a single condition failed we  dont add the data in the filter 
+
+*/
+
 function filterJobs(){
     const location = locationFilter.value;
     const search = searchFilter.value.toLowerCase();
@@ -132,6 +154,8 @@ function filterJobs(){
     displayJobs(filtered);
 }
 
+
+// apply the listeners
 locationFilter.addEventListener('change', filterJobs);
 salaryFilter.addEventListener("input", filterJobs);
 searchFilter.addEventListener("input", filterJobs);

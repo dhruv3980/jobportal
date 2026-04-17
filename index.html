@@ -9,7 +9,10 @@
 <link rel="stylesheet" href="style.css">
 <body>
 <div class="container">
-        <h2>Job Board</h2>
+    // title of the website
+    <h2>Job Board</h2>
+
+    //filter card
 
     <div class="filter">
        <label for="location">filter by location</label>
@@ -28,7 +31,7 @@
         <label for="range">filter by Min Range</label>
         <input type="number" id="range">
 
-            <label for="title">Title</label>
+        <label for="title">Title</label>
         <input type="text" name="title" id="title">
 
 
@@ -36,8 +39,9 @@
     </div>
 
     <br>
-
+    // jobs container
     <div id="jobs" class="jobs"></div>
+        // no result container it appear dynamically
         <p id="noResults" class="no-results"></p>
     </div>
 </div>

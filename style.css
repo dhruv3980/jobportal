@@ -1,4 +1,4 @@
-
+/* remove the unnecessary padding and margin */
 * {
   margin: 0;
   padding: 0;
@@ -6,25 +6,25 @@
   font-family: Arial, sans-serif;
 }
 
-
+/*  defined the body color */
 body {
   background: #fff;
   padding: 20px;
 }
 
-
+/* max height 1100 */
 .container {
   max-width: 1100px;
   margin: auto;
 }
 
-
+/* title alignment */
 h2 {
   text-align: center;
   margin-bottom: 20px;
 }
 
-
+/* filter styling */
 .filter {
   display: flex;
   flex-wrap: wrap;
@@ -55,13 +55,14 @@ h2 {
   border-color: #007bff;
 }
 
-
+/* job container styling */
 .jobs {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 15px;
 }
 
+/* card styling inside job container */
 
 .card {
   background: white;
@@ -71,7 +72,7 @@ h2 {
   transition: 0.3s;
 }
 
-
+/*  hover on the card scale it */
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.1);
@@ -89,7 +90,7 @@ h2 {
   margin: 5px 0;
 }
 
-
+/* style the not result found paragraph */
 .no-results {
   text-align: center;
   color: red;
